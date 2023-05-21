@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<style>
+	body{ 
+	background-image: url(https://i.pinimg.com/564x/9c/03/8e/9c038e87df7d332460a8ab0d7bbd7c9f.jpg); 
+	background-repeat: no-repeat;
+	background-size:  1440px; 
+}
+
+
+</style>
+<body>
+	<div class="container">
+	<center><h1>GUIDE</h1></center>
+	<table class="table" align="center">
+		<thread>
+			<tbody>
+				<tr>
+					<th scope="col">Millimeter (mm) </th>
+					<th scope="col">Conversions (cm/m/km)</th>
+				</tr>
+	<tr>
+		<td>10 mm</td>
+		<td>1 cm</td>
+	</tr>
+	<tr>
+		<td>1000 mm</td>
+		<td> 1 m </td>
+	</tr>
+	<tr>
+		<td>1000000 mm</td>
+        <td>1 km</td>
+   </tr> 
+</tbody>
+</thread>
+</table>
+</div>
+
+<div class="container">
+    <br>
+    <center><h2>CONVERT</h2></center>
+    <table class="table" align="center">
+    <center><label for="millimeters">MILLIMETERS:</label></center>
+    <center><input type="number" placeholder="VALUE" id="millimeters"></center>
+    <center><label for="unit">CONVERT TO:</label></center>
+    <center><select id="unit"></center>
+    	<option value="centimeters">Centimeters</option>
+    	<option value="meters">Meters</option>
+    	<option value="kilometers">Kilometers</option>
+    </select>
+</table>
+    <div class="container" align="center">
+        <br>
+    <button type="button" class="btn btn-primary" onclick="convertLength()">Submit</button>
+    </div>
+    <br>
+    <center><h3>RESULTS</h3></center>
+      <center><p id="result"></p></center>
+
+</table>
+    </div>
+    <br>
+</body>
+
+<script>
+	function convertLength(){
+		var millimeters =
+		parseFloat(document.getElementById("millimeters").value);
+		var unit = document.getElementById("unit").value;
+		var result;
+
+		if(unit === "centimeters") {
+			result = (millimeters / 10).toFixed(10);
+		}
+		else if (unit === "meters"){
+			result = (millimeters / 1000).toFixed(10);
+		}
+		else if (unit === "kilometers") {
+			result = (millimeters / 1000000).toFixed(10);
+		}
+		else {
+			result = 0;
+		} 
+		document.getElementById("result").textContent = result; 
+	}
+</script>
+</html>
+
+
